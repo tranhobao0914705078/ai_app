@@ -1,0 +1,86 @@
+https://ui.shadcn.com/ 
+dùng để create dự án
+
+- Build a SaaS AI Platform with Next.js 13, React, Tailwind, Prisma, Stripe
+- clerk auth: dịch vụ quản lý xác thực (authentication) được sử dụng để xây dựng và quản lý hệ thống xác thực người dùng trong ứng dụng web hoặc di động
+- setup clerk: https://clerk.com/docs/quickstarts/nextjs
+- dùng <Menu /> -> import { Menu } from "lucide-react";
+    tạo menu responsive
+- <UserButton afterSignOutUrl="/"/> dùng để hiển thị login
+-cn: là thư viện hợp nhất Tailwind và clsx, tránh tạo ra xung đột
+- dùng bộ icon tại https://lucide.dev/
+- menu cho mobile screen vào shadcn > components > sheet (có lựa chọn khác)
+----------------------------------------------------------------
+* UI
+- h-full: Lớp này làm cho phần tử này có chiều cao bằng chiều cao của phần tử cha của nó. Trong trường hợp này, nó có thể làm cho
+    phần tử này chiếm toàn bộ chiều cao màn hình
+- relative: Lớp này thiết lập phần tử để sử dụng vị trí tương đối, điều này có thể được sử dụng để định vị các phần tử con.
+- hidden Lớp này ẩn phần tử trên các thiết bị nhỏ hơn 
+- md:flex: Lớp này làm cho phần tử này hiển thị với kiểu "flex" trên các thiết bị có kích thước màn hình trung bình (độ phân giải thấp hơn)
+* md: @media (min-width: 768px) {
+    .md\:px-20 {
+        padding-left: 5rem/* 80px */;
+        padding-right: 5rem/* 80px */;
+    }
+}
+
+* lg: @media (min-width: 1024px) {
+    .lg\:px-32 {
+        padding-left: 8rem/* 128px */;
+        padding-right: 8rem/* 128px */;
+    }
+}
+- md:flex-col: Lớp này đặt kiểu hiển thị của phần tử thành kiểu "flex-col"
+- md:fixed: Lớp này thiết lập phần tử để vị trí cố định trên các thiết bị trung bình
+- md:inset-y-0: Lớp này điều chỉnh phần tử để nó chiếm toàn bộ chiều cao theo chiều dọc của màn hình 
+- z-[80]:  Lớp này đặt chỉ số độ sâu (z-index) của phần tử thành 80. Điều này làm cho phần tử này nổi lên phía trên các phần tử có chỉ số độ sâu thấp hơn
+- md: Đây là tiền tố được sử dụng để áp dụng lớp chỉ trên các thiết bị có kích thước màn hình trung bình (medium screens) và lớn hơn, giống như trong ví dụ trước.
+- md:pl-72: là padding left
+- py-4: Lớp này thiết lập padding trên dưới của phần tử là 1 rem(16px), py là padding top, và padding bottom
+- px-3: Lớp này thiết lập padding trái phải của phần tử, px-3 sẽ thiết lập khoảng cách padding là 0.75rem theo chiều ngang cho phần tử.
+- px/py-1: 4px (0,25rem)
+- flex, flex-col: được sử dụng để định dạng phần tử và biến nó thành một container flex. flex-col chuyển container thành kiểu hiển thị flex theo chiều dọc, nghĩa là các phần tử con bên trong nó sẽ xếp dọc.
+- bg-[#111827]:  Lớp này đặt màu nền của phần tử thành màu xám đậm (#111827) sử dụng mã màu hex. Phần tử sẽ có màu nền là màu xám đậm.
+- flex-1: cho một phần tử trong một container flex, phần tử đó sẽ mở rộng để lấp đầy toàn bộ không gian trống còn lại trong container flex
+- group: thường được sử dụng để áp dụng các hiệu ứng tương tác đối với phần tử con khi người dùng tương tác với phần tử cha
+- sheet: là thư viện dùng trong shadcn
+- SheetTrigger: là một sự kiện để khi click sẽ quyết định mở hoặc đóng SheetContent
+- SheetContent: là phần content khi được hiện ra và bên trong có thể trả về value tự custom
+- Space-x-4
+    + space-x: Lớp này chứa chỉ dẫn cho việc thiết lập khoảng cách ngang (khoảng cách giữa các phần tử theo chiều ngang) của các phần tử bên trong container.
+    + 4: Giá trị này làm cho khoảng cách giữa các phần tử là 1rem (16px) theo mặc định. Tailwind CSS thường sử dụng hệ số 4 cho các giá trị cách xa ngang và dọc
+    =>  lớp space-x-4 cho một container hoặc một nhóm các phần tử, các phần tử bên trong container sẽ cách xa nhau 1rem theo chiều ngang.
+- Space-y-4
+    + space-y: : Lớp này chứa chỉ dẫn cho việc thiết lập khoảng cách dọc (khoảng cách giữa các phần tử theo chiều dọc) của các phần tử bên trong container.
+    => cho một container hoặc một nhóm các phần tử, các phần tử bên trong container sẽ cách xa nhau 1rem theo chiều dọc.
+- lg:px-32:  đặt khoảng lề theo chiều ngang bên trái và bên phải của phần tử thành 8rem (128px) khi giao diện được mở rộng lớn hơn kích thước lớn (được xác định bởi breakpoint lg).
+- gap-x-4: gap-x trong tên lớp viết tắt từ "gap-x axis" nghĩa là khoảng cách theo chiều ngang.
+    +vd trong 1 div có 2 phần tử "okee1okee2" dùng gap-x-4: okee1 okee2
+- sm: đại diện cho màn hình điện thoại (640px)
+    + hover:shadow-sm: khi kích thước màn hình là di động mới có shadow
+- md: đại diện cho màn hình tablet hoặc máy tính (768px)
+    + hover:shadow-md: khi kích thước màn hình là từ 768px mới có shadow
+- lg: 1024px trở lên
+
+------------------------------------
+* Hooks
+const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            prompt: ""
+        }
+    });
+- useForm<z.infer<typeof formSchema>>
+    + useForm: là 1 hook sử dụng để quản lý trạng thái và hành vi của biểu mẫu
+    + <z.infer<typeof formSchema>>: là cách khai báo kiểu dữ liệu của biểu mẫu dựa vào
+        formShcema đã cấu hình trước đó 
+    + resolver: zodResolver(formSchema): được sử dụng để tạo 1 resolver(bộ giải quyết)
+        dựa trên schema từ `zod`. Resolver này sẽ đảm bảo rằng các giá trị nhập vào form
+        đều tuân theo quy tắc từ formSchema
+    + defaultValues:là một tùy chọn của hook useForm để thiết lập giá trị mặc định cho các trường của biểu mẫu.
+ => quản lý một biểu mẫu React. Schema từ zod được sử dụng để xác định kiểu và quy tắc kiểm tra của dữ liệu biểu mẫu. 
+    Những giá trị mặc định và resolver cũng được cấu hình để đảm bảo tính nhất quán và tuân thủ quy tắc của schema.
+------------------------------------------
+- Cách add API OPENAI
+
+**1:19:22
